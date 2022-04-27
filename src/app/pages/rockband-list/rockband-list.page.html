@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-title>Rock Band</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button [routerLink]="['/rockband-new/']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list class="rock-band-list">
+    <ion-item *ngFor="let rockband of Rockbands.results" class="rock-band-content" lines="none">
+
+      <ion-card class="rock-band-card">
+        <ion-item lines="none" class="item-background-color">
+          <ion-icon name="musical-note" slot="start"></ion-icon>
+          <ion-label>{{rockband.name}}</ion-label>
+          <ion-button color="success" slot="end" [routerLink]="['/rockband-update/', rockband.id]">EDITER</ion-button>    
+          <ion-button color="danger" slot="end" (click)="deleteRockband(rockband)">SUPPRIMER</ion-button>
+        </ion-item>
+      
+        <ion-card-content>
+          <ion-item-group lines="none">
+            <ion-item lines="none">
+              <span class="span-title">Pays : </span><span>{{ rockband.country }}</span>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="span-title">Ville : </span><span>{{ rockband.city }}</span>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="span-title">Année début : </span><span>{{rockband.startYear}}</span><span class="span-space"></span>
+              <span class="span-title">Année séparation : </span><span>{{rockband.endYear}}</span>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="span-title">Fondateur : </span><span>{{rockband.founders}}</span>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="span-title">Nombre de membres : </span><span>{{rockband.members}}</span>
+            </ion-item>
+            <ion-item lines="none">
+              <span class="span-title">Courant musical : </span><span>{{rockband.genre}}</span>
+               {{rockband.genre}}
+            </ion-item>
+            <ion-item lines="none">
+              {{rockband.bio}}
+            </ion-item>
+          </ion-item-group>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" expand="block" [routerLink]="['/rockband-new/']">Ajouter un groupe de rock</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

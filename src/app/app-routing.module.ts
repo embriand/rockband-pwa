@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'rockband-list',
     pathMatch: 'full'
+  },
+  {
+    path: 'rockband-list',
+    loadChildren: () => import('./pages/rockband-list/rockband-list.module').then( m => m.RockbandListPageModule)
+  },
+  {
+    path: 'rockband-update/:id',
+    loadChildren: () => import('./pages/rockband-update/rockband-update.module').then( m => m.RockbandUpdatePageModule)
+  },
+  {
+    path: 'rockband-new',
+    loadChildren: () => import('./pages/rockband-new/rockband-new.module').then( m => m.RockbandNewPageModule)
   },
 ];
 

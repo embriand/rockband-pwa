@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rock Band</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="newRockbandFormFg" (ngSubmit)="onSubmit()">
+      
+      <ion-item>
+        <ion-label position="floating">Nom du groupe</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Origine</ion-label>
+        <ion-input formControlName="country" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Ville</ion-label>
+        <ion-input formControlName="city" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Année début</ion-label>
+        <ion-input formControlName="startYear" type="text" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Année séparation</ion-label>
+        <ion-input formControlName="endYear" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fondateurs</ion-label>
+        <ion-input formControlName="founders" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Membres</ion-label>
+        <ion-input formControlName="members" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Genre</ion-label>
+        <ion-input formControlName="genre" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Présentation</ion-label>
+        <ion-input formControlName="bio" type="text" required></ion-input>
+      </ion-item>
+      
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="warning" expand="block">Ajouter</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+</ion-content>
