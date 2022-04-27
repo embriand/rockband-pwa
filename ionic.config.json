@@ -1,0 +1,7 @@
+{
+  "name": "rockband",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
