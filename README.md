@@ -12,9 +12,9 @@ Typescript: 4.4
 ## Description
 This project allow the management of Rock Bands data.  
 
-Data are available through an API.  
+Refer to following repository installation process of database, API access and documentation information:
 
-Refer to following repository for installation process : https://gitlab.com/mozzy/rock-band
+https://gitlab.com/mozzy/rock-band
 
 ## Installation
 After cloning the rockband repository process following commands
@@ -26,4 +26,10 @@ Load the Ionic Angular project
 > ionic serve
 
 ## Usage
-When above processes are finished, a browser will open on "http://localhost:8100/"  
+When above processes are finished and Docker running
+
+Go to http://localhost:8100/ to see the project running.
+
+Go to http://localhost:8080/ to manage the database, see https://gitlab.com/mozzy/rock-band for more information.
+
+Go to http://localhost:9000/documentation to access the API route documentation, see https://gitlab.com/mozzy/rock-band for more information.
