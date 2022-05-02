@@ -4,7 +4,7 @@
 git clone https://github.com/embriand/rockband.git
 
 ## Technologies used
-Javascript
+Javascript  
 Angular: 13.3  
 Node: v17.9.0  
 Ionic: 6.19.0  
