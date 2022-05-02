@@ -72,7 +72,7 @@ export class RockbandNewPage implements OnInit {
             this.presentToast(msgFormValidated, 1).then( () => {
               this.zone.run(() => {
                 this.newRockbandFormFg.reset();
-                this.router.navigate(['/rockband-list']);
+                this.router.navigate(['/rockband-management']);
               });
             });
           }

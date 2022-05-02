@@ -8,6 +8,8 @@ import { RockbandManagementPageRoutingModule } from './rockband-management-routi
 
 import { RockbandManagementPage } from './rockband-management.page';
 
+import { RockbandInfinitscrollListComponent } from '../../components/rockband-infinitscroll-list/rockband-infinitscroll-List.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { RockbandManagementPage } from './rockband-management.page';
     IonicModule,
     RockbandManagementPageRoutingModule
   ],
-  declarations: [RockbandManagementPage]
+  declarations: [RockbandManagementPage, RockbandInfinitscrollListComponent]
 })
 export class RockbandManagementPageModule {}

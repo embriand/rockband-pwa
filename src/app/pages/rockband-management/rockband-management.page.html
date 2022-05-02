@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>rockband-management</ion-title>
+    <ion-row>
+        <ion-title>Rock Band</ion-title>
+        <ion-item style="width: 30%; margin-right: 100px;">
+          <ion-label>Filtres</ion-label>
+          <ion-select>
+            <ion-select-option value="name">Name</ion-select-option>
+            <ion-select-option value="startYear">Année début</ion-select-option>
+            <ion-select-option value="endYear">Année séparation</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item style="width: 30%; margin-right: 100px;">
+          <ion-label>Recherche : </ion-label>
+          <ion-input placeholder="coming soon"></ion-input>
+        </ion-item>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button [routerLink]="['/rockband-new/']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <app-rockband-infinitscroll-list [name]="{name}"></app-rockband-infinitscroll-list>
+
+  <ion-row>
+    <ion-col>
+      <ion-button color="primary" expand="block" [routerLink]="['/rockband-new/']">Ajouter un groupe de rock</ion-button>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

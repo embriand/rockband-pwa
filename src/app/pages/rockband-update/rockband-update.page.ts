@@ -86,14 +86,14 @@ export class RockbandUpdatePage implements OnInit {
         this.apiService.updateRockband(this.id, this.updateRockbandFormFg.value)
         .subscribe(() => {
           this.updateRockbandFormFg.reset();
-          this.router.navigate(['/rockband-list']);
+          this.router.navigate(['/rockband-management']);
         });
       });
     }
   }
 
   private back(): void {
-    this.router.navigate(['/rockband-list']);
+    this.router.navigate(['/rockband-management']);
   }
 
 }

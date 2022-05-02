@@ -25,9 +25,9 @@ export class ApiInfinitScrollService {
      */
      getRockbands(args?: any): Observable<IRockband[]> {
 
-      console.log(args);
-
        let url = this.endpointRockbands;
+      //   'http://localhost:9000/rockband?limit=2&offset=1&sortBy=name' \
+      //http://localhost:9000/rockband?limit=5&offset=4&sortBy=name
 
        if(args) {
         url = url + args;

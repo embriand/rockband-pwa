@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'rockband-list',
+    redirectTo: 'rockband-management',
     pathMatch: 'full'
   },
   {
@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'rockband-new',
     loadChildren: () => import('./pages/rockband-new/rockband-new.module').then( m => m.RockbandNewPageModule)
-  },  {
+  },
+  {
     path: 'rockband-management',
     loadChildren: () => import('./pages/rockband-management/rockband-management.module').then( m => m.RockbandManagementPageModule)
   },
