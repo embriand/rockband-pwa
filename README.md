@@ -4,10 +4,11 @@
 git clone https://github.com/embriand/rockband.git
 
 ## Technologies used
+Javascript
 Angular: 13.3  
 Node: v17.9.0  
 Ionic: 6.19.0  
-Typescript: 4.4  
+TypeScript: 4.4  
 
 ## Description
 This project allow the management of Rock Bands data.  
