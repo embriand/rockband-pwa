@@ -1,4 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, AfterContentInit, NgZone, Input, ViewChild, Injectable } from '@angular/core';
+import {Observable} from 'rxjs';
+
 import { Router } from '@angular/router';
 import { ViewWillEnter, ToastController } from '@ionic/angular';
 
@@ -10,8 +12,12 @@ import { ApiInfinitScrollService } from '../../services/api-infinit-scroll.servi
   templateUrl: './rockband-infinitscroll-list.component.html',
   styleUrls: ['./rockband-infinitscroll-list.component.scss'],
 })
-export class RockbandInfinitscrollListComponent implements OnInit {
+export class RockbandInfinitscrollListComponent implements OnInit, AfterContentInit {
 
+  @Input()
+  keyFilter: Observable<any>;
+
+  keyValue = 'name';
   pageNumber = 1;
   pageLimit = 5;
 
@@ -23,15 +29,28 @@ export class RockbandInfinitscrollListComponent implements OnInit {
     private zone: NgZone,
     private apiInfinitScrollService: ApiInfinitScrollService,
     private apiService: ApiService,
-    public toastController: ToastController) { }
+    public toastController: ToastController) {    }
 
   ngOnInit() {
+
+    this.keyFilter.subscribe( (data) => {
+
+      this.keyValue = data;
+
+      this.loadRockBands(false, '');
+
+    });
+
     this.loadRockBands(false, '');
+  }
+
+  ngAfterContentInit() {
+    console.log(this.keyFilter);
   }
 
   loadRockBands(isFirstLoad, event) {
 
-    const args = `?limit=${this.pageLimit}&offset=${this.pageNumber}&sortBy=name`;
+    const args = `?limit=${this.pageLimit}&offset=${this.pageNumber}&sortBy=${this.keyValue}`;
 
     this.apiInfinitScrollService.getRockbands(args).subscribe((response) => {
       this.rockbandsItems = response;

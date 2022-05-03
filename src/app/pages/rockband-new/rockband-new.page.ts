@@ -65,7 +65,6 @@ export class RockbandNewPage implements OnInit {
     } else {
       this.apiService.addRockband(this.newRockbandFormFg.value)
         .subscribe((response) => {
-          console.log(response);
           if(response) {
             const msgFormValidated = 'Le groupe de rock a été créé';
 

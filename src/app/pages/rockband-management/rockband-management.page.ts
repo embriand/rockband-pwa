@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class RockbandManagementPage implements OnInit {
 
+  eventsSubject: Subject<any | null> = new Subject<any | null>();
+  eventsSubject2 = this.eventsSubject.asObservable();
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  optionsFn(key) {
+    this.eventsSubject.next(key);
   }
 
 }
