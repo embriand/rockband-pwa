@@ -57,7 +57,7 @@ export class RockbandUpdatePage implements OnInit {
    *
    * @param id
    */
-  private fetchRockband(id) {
+  public fetchRockband(id) {
     this.apiService.getRockband(id).subscribe((data) => {
       this.updateRockbandFormFg.setValue({
         name: data['name'],
@@ -73,7 +73,7 @@ export class RockbandUpdatePage implements OnInit {
     });
   }
 
-  private onSubmit() {
+  public onSubmit() {
 
     const msgFormValidated = 'Le groupe de rock a été enregistré';
     const msgFormNotValidated = 'Veuillez vérifier les informations saisies !';
@@ -92,7 +92,7 @@ export class RockbandUpdatePage implements OnInit {
     }
   }
 
-  private back(): void {
+  public back(): void {
     this.router.navigate(['/rockband-management']);
   }
 

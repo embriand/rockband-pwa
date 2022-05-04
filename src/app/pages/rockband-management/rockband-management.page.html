@@ -4,7 +4,7 @@
         <ion-title>Rock Band</ion-title>
         <ion-item style="width: 30%; margin-right: 100px;">
           <ion-label>Filtres</ion-label>
-          <ion-select (ionChange)="optionsFn($event.target.value)">
+          <ion-select (ionChange)="optionsFn($any($event.target).value)">
             <ion-select-option value="name">Name</ion-select-option>
             <ion-select-option value="startYear">Année début</ion-select-option>
             <ion-select-option value="endYear">Année séparation</ion-select-option>

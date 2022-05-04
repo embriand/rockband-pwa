@@ -1,4 +1,4 @@
-## Rock Band
+## Rock Band PWA
 
 ## Getting started
 git clone https://github.com/embriand/rockband.git
@@ -8,10 +8,13 @@ Javascript
 Angular: 13.3  
 Node: v17.9.0  
 Ionic: 6.19.0  
-TypeScript: 4.4  
+TypeScript: 4.4
+Capacitor 3.5  
+
+HTTP Server
 
 ## Description
-This project allow the management of Rock Bands data.  
+This project allow the management of Rock Bands data as a PWA application.  
 
 Refer to following repository process for database installation, API access and documentation information:
 
@@ -25,6 +28,15 @@ Install all dependencies
 
 Load the Ionic Angular project
 > ionic serve
+
+For production deployment
+
+> ionic build --prod
+> http-server www
+
+Install previously https://github.com/http-party/http-server
+
+
 
 ## Usage
 When all above processes are finished and Docker running (check status)
